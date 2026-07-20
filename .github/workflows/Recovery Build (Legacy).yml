@@ -75,7 +75,7 @@ jobs:
     - name: Set Python2 Default
       run: |
         sudo ln -sf /usr/bin/python2 /usr/bin/python
-        sudo ln -sf /usr/bin/python2 /usr/bin/usr/python
+        sudo ln -sf /usr/bin/python2 /usr/bin/python3
         python --version
 
     - name: Install OpenJDK
