@@ -86,10 +86,8 @@ jobs:
 
     - name: Install repo
       run: |
-        mkdir ~/bin
-        curl https://googleapis.com > ~/bin/repo
-        chmod a+x ~/bin/repo
-        sudo ln -sf ~/bin/repo /usr/bin/repo
+        sudo apt-get update
+        sudo apt-get install repo -y
 
     - name: Initialize repo
       run: |
