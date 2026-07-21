@@ -71,7 +71,12 @@ jobs:
             xsltproc bc ccache lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev \
             libwxgtk3.0-gtk3-dev libxml2 lzop pngcrush schedtool squashfs-tools \
             imagemagick libbz2-dev lzma ncftp qemu-user-static libstdc++-10-dev libncurses5 python2 tar
-            
+
+    - name: Install repo
+      run: |
+        sudo apt-get update
+        sudo apt-get install repo -y
+
     - name: Set Python2 Default
       run: |
         sudo ln -sf /usr/bin/python2 /usr/bin/python
@@ -83,11 +88,6 @@ jobs:
       with:
         distribution: 'zulu'
         java-version: '11'
-
-    - name: Install repo
-      run: |
-        sudo apt-get update
-        sudo apt-get install repo -y
 
     - name: Initialize repo
       run: |
